@@ -31,6 +31,7 @@ android {
         minSdkVersion 14
         versionCode 282
         versionName '4.3.82'
+        multiDexEnabled = true
         targetSdk 31
         applicationId "troop.com.freedcam"
         renderscriptTargetApi 24
@@ -97,6 +98,10 @@ dependencies {
     implementation 'com.google.dagger:hilt-android:2.42'
     implementation project(path: ':renderscript-intrinsics-replacement-toolkit:renderscript-toolkit')
     implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-jackson:2.9.0'
+    implementation('com.squareup.okhttp3:okhttp:5.0.0-alpha.2')
+    implementation("androidx.multidex:multidex:2.0.1")
     annotationProcessor 'com.google.dagger:hilt-compiler:2.42'
 }
 
