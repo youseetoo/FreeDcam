@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="connectionModel"
+            type="uc2.ui.models.ConnectionModel" />
+        <variable
+            name="motor"
+            type="uc2.ui.models.MotorModel" />
+        <variable
+            name="led"
+            type="uc2.ui.models.LedModel" />
+    </data>
+
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".Uc2UiFragment">
+
+    <LinearLayout
+        android:id="@+id/connectholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:text="URL" />
+
+        <EditText
+            android:id="@+id/editTextUrl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:text="@={connectionModel.url}" />
+
+        <Button
+            android:id="@+id/button_connect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:onClick="@{()->connectionModel.onConnectButtonClick()}"
+            android:text="Connect" />
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/checkBox_enableLed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:checked="@={led.ledsOn}"
+        android:text="Led Enable" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Red:" />
+
+    <SeekBar
+        android:id="@+id/seekBar_red"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:progressBackgroundTint="#FF0000"
+        android:progress="@={led.red}" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Green:" />
+
+    <SeekBar
+        android:id="@+id/seekBar_green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:progressBackgroundTint="#00FF6A"
+        android:progress="@={led.green}" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blue:" />
+
+    <SeekBar
+        android:id="@+id/seekBar_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:progressBackgroundTint="#0026FF"
+        android:progress="@={led.blue}" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:textAlignment="center" />
+
+    <include
+        android:id="@+id/stepper_x_control"
+        layout="@layout/uc2_view_motor_control_stepper" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Y"
+        android:textAlignment="center" />
+
+    <include
+        android:id="@+id/stepper_y_control"
+        layout="@layout/uc2_view_motor_control_stepper" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Z"
+        android:textAlignment="center" />
+
+    <include
+        android:id="@+id/stepper_z_control"
+        layout="@layout/uc2_view_motor_control_stepper" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A"
+        android:textAlignment="center" />
+
+    <include
+        android:id="@+id/stepper_a_control"
+        layout="@layout/uc2_view_motor_control_stepper" />
+
+</LinearLayout>
+
+</layout>

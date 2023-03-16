@@ -1,9 +1,9 @@
-package freed.uc2rest.response;
+package uc2.uc2rest.response;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-import freed.uc2rest.response.items.LedColorItem;
+import uc2.uc2rest.response.items.LedColorItem;
 
 @JsonTypeName("led")
 @JsonTypeInfo(include = JsonTypeInfo.As.WRAPPER_OBJECT ,use = JsonTypeInfo.Id.NAME)

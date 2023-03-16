@@ -1,4 +1,4 @@
-package freed.uc2rest.enums;
+package uc2.uc2rest.enums;
 
 // "array", "full", "single", "off", "left", "right", "top", "bottom",
 public enum LedModes {

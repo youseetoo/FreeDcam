@@ -1,4 +1,4 @@
-package freed.uc2rest.response.items;
+package uc2.uc2rest.response.items;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,4 +1,4 @@
-package freed.uc2rest;
+package uc2.uc2rest;
 
 @FunctionalInterface
 public interface ApiServiceCallback<T> {

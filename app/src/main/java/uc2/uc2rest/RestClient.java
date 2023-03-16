@@ -1,15 +1,15 @@
-package freed.uc2rest;
+package uc2.uc2rest;
 
 import android.util.Log;
 
-import freed.uc2rest.response.LedArrRequest;
-import freed.uc2rest.response.LedArrResponse;
-import freed.uc2rest.response.MacRequest;
-import freed.uc2rest.response.MotorActRequest;
-import freed.uc2rest.response.MotorGetResponse;
-import freed.uc2rest.response.WifiConnectRequest;
-import freed.uc2rest.response.items.BtScanItem;
-import freed.uc2rest.ws.Uc2WebSocket;
+import uc2.uc2rest.response.LedArrRequest;
+import uc2.uc2rest.response.LedArrResponse;
+import uc2.uc2rest.response.MacRequest;
+import uc2.uc2rest.response.MotorActRequest;
+import uc2.uc2rest.response.MotorGetResponse;
+import uc2.uc2rest.response.WifiConnectRequest;
+import uc2.uc2rest.response.items.BtScanItem;
+import uc2.uc2rest.ws.Uc2WebSocket;
 
 
 public class RestClient {

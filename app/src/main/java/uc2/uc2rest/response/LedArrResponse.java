@@ -1,9 +1,9 @@
-package freed.uc2rest.response;
+package uc2.uc2rest.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import freed.uc2rest.enums.LedModes;
+import uc2.uc2rest.enums.LedModes;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LedArrResponse

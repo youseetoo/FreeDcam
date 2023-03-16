@@ -85,6 +85,8 @@ import freed.views.CurveViewControl;
 import freed.views.FaceRectDrawer;
 import freed.views.pagingview.PagingViewTouchState;
 import freed.views.shutter.ShutterButton;
+import uc2.ui.Uc2UiFragment;
+import uc2.ui.Uc2ViewModel;
 
 /**
  * Created by troop on 14.06.2015.
@@ -128,11 +130,11 @@ public class NextGenCameraUiFragment extends Fragment implements
 
     private HorizontLineFragment horizontLineFragment;
 
-    private boolean rightbuttonvisible = true;
     private CurveViewControl curveView;
 
     private FaceRectDrawer faceRectDrawer;
     private FrameLayout faceDrawerHolder;
+    private Uc2UiFragment uc2UiFragment;
 
     @Inject
     public SettingsManager settingsManager;
@@ -283,6 +285,25 @@ public class NextGenCameraUiFragment extends Fragment implements
         infoOverlayModelView.setSettingsManager(settingsManager);
         infoOverlayModelView.setLocationManager(locationManager);
         binding.infoOverlay.setInfoOverlayModel(infoOverlayModelView.getInfoOverlayModel());
+
+        binding.buttonUc2.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+                if (uc2UiFragment == null)
+                {
+                    uc2UiFragment = new Uc2UiFragment();
+                    transaction.replace(id.framelayout_uc2fragment, uc2UiFragment, "Uc2Fragment");
+                }
+                else
+                {
+                    transaction.remove(uc2UiFragment);
+                    uc2UiFragment = null;
+                }
+                transaction.commit();
+            }
+        });
+
         curveView = view.findViewById(id.curveView);
         curveView.setCurveChangedListner(this);
         curveView.setVisibility(View.GONE);

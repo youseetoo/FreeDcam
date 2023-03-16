@@ -1,4 +1,4 @@
-package freed.uc2rest.ws;
+package uc2.uc2rest.ws;
 
 import okhttp3.WebSocketListener;
 

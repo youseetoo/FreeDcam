@@ -1,4 +1,4 @@
-package freed.uc2rest.response;
+package uc2.uc2rest.response;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
