@@ -24,7 +24,8 @@
         android:id="@+id/connectholder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        setVisibilityToView="@{!connectionModel.connected}">
 
         <TextView
             android:layout_width="0dp"
@@ -50,6 +51,12 @@
             android:text="Connect" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/controlsholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        setVisibilityToView="@{connectionModel.connected}">
     <CheckBox
         android:id="@+id/checkBox_enableLed"
         android:layout_width="match_parent"
@@ -138,6 +145,7 @@
     <include
         android:id="@+id/stepper_a_control"
         layout="@layout/uc2_view_motor_control_stepper" />
+    </LinearLayout>
 
 </LinearLayout>
 

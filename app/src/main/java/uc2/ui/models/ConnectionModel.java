@@ -49,11 +49,18 @@ public class ConnectionModel extends BaseObservable {
         setMessage("Connecting....");
     }
 
+    @Bindable
+    public boolean isConnected()
+    {
+        return isConnected;
+    }
+
     private ApiServiceCallback<String[]> getFeatureCallback = new ApiServiceCallback<String[]>() {
         @Override
         public void onResponse(String[] response) {
             setMessage("Connected");
             isConnected = true;
+            notifyPropertyChanged(BR.connected);
         }
 
         @Override
@@ -61,6 +68,7 @@ public class ConnectionModel extends BaseObservable {
             ApiServiceCallback.super.onFailure(cause);
             setMessage("Failed To Connect");
             isConnected = false;
+            notifyPropertyChanged(BR.connected);
         }
     };
 
